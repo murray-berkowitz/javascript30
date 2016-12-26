@@ -1,0 +1,69 @@
+@font-face{
+  font-family:'digital-clock-font';
+  src: url(digital-7.ttf);
+} 
+html {
+      background:black;
+      background-size:cover;
+      font-family:'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+}
+.body {
+  font-size: 2rem;
+  display:flex;
+  flex:1;
+  min-height: 80vh;
+  align-items: center;
+}
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border:20px solid white;
+  border-radius:50%;
+  margin:50px auto;
+  position: relative;
+  padding:2rem;
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+}
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+.hand.hour-hand {
+    width:42%;
+    left:8%;
+}
+.hand.sec-hand {
+    height:4px;
+}
+.hand {
+  width:50%;
+  height:6px;
+  background:white;
+  position: absolute;
+  top:50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: .05s all cubic-bezier(0.1, 2.7, .58, 1)
+}
+.digital-clock {
+    position:relative;
+    display: inline-block;
+    bottom:140px;
+    padding:10px 15px;
+    border:2px solid white;
+}
+.digital-clock h1 {
+    display:inline-block;
+    font-size:48px;
+    font-family:'digital-clock-font';
+    color:red;
+    margin:0;
+}
